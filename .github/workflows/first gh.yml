@@ -21,18 +21,13 @@ jobs:
         with:
           node-version: '22'
 
-    # 3. Install dependencies
-      - name: Install dependencies
-        run: npm install
-        working-directory: pradeep_github
-  
-
-    # 4. Run tests
-      - name: Run tests
-        run: npm test
-        working-directory: pradeep_github
-
-    # 5. Print a message
+    # 3. Print a message
       - name: Print success message
-        run: echo "Build and Test completed successfully"
+        run: echo "Hello from Github actions"
+
+      - name: show current directory
+        run: pwd
+
+      - name: List files
+        run: ls -lrt
   
