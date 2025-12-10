@@ -24,11 +24,13 @@ jobs:
     # 3. Install dependencies
       - name: Install dependencies
         run: npm install
+        working-directory: /home/runner/work/pradeep_github/pradeep_github/package.json
   
 
     # 4. Run tests
       - name: Run tests
         run: npm test
+        working-directory: /home/runner/work/pradeep_github/pradeep_github/package.json
 
     # 5. Print a message
       - name: Print success message
