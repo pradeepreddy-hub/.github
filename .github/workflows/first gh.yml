@@ -1,0 +1,35 @@
+name: Simple CI workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. checkout code
+      - name: checkout repository
+        uses: actions/checkout@v3
+
+    # 2. Set up Node.js (example for node project)
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6.1.0
+        with:
+          node-version: '22'
+
+    # 3. Install dependencies
+      - name: install dependencies
+        run: npm install
+
+    # 4. Run tests
+      - name: Run tests
+        run: npm test
+
+    # 5. Print a message
+      - name: Print success message
+        run: echo "Build and Test completed successfully"
+  
